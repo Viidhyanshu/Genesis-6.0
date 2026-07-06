@@ -5,7 +5,7 @@ import "./globals.css";
 import "@fontsource/google-sans/index.css";
 import "@fontsource/google-sans/500.css";
 import "@fontsource/google-sans/700.css";
-import Navbar from "../home/Navbar";
+import Navbar from "../components/home/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,13 +23,16 @@ const outfit = Outfit({
 });
 
 const absans = localFont({
-  src: "../absans-main/fonts/Absans-Regular.woff2",
+  src: "../public/fonts/Absans-Regular.woff2",
   variable: "--font-absans",
 });
 
 export const metadata: Metadata = {
-  title: "IEEE MUJ",
+  title: "Genesis-6.0",
   description: "IEEE ",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
