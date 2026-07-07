@@ -1,4 +1,4 @@
-import Events from "../../events";
+import Events from "../../components/events";
 
 export default function Page() {
   return <Events />;
