@@ -92,8 +92,8 @@ export default function Navbar() {
   });
 
   const navLinks = [
-    { label: "Home", href: "#/" },
-    { label: "Events", href: "#events" },
+    { label: "Home", href: "/" },
+    { label: "Events", href: "/event" },
     { label: "Gallery", href: "#gallery" },
     { label: "Partners", href: "#partners" },
     { label: "Team", href: "#team" },
