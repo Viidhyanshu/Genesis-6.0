@@ -106,22 +106,46 @@ export default function Footer() {
         <div className={styles.middleSection}>
           <div className={styles.contactGrid}>
             <div className={styles.contactCard}>
-              <h4 className={styles.contactName}>Samaksh Gupta</h4>
+              <h4 className={styles.contactName}>
+                <svg className={styles.userIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Samaksh Gupta
+              </h4>
               <p className={styles.contactPhone}>+91 98713 40076</p>
               <p className={styles.contactRole}>(Chairperson-IEEE CS MUJ)</p>
             </div>
             <div className={styles.contactCard}>
-              <h4 className={styles.contactName}>Aditya Rajawat</h4>
+              <h4 className={styles.contactName}>
+                <svg className={styles.userIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Aditya Rajawat
+              </h4>
               <p className={styles.contactPhone}>+91 70273 45159</p>
               <p className={styles.contactRole}>(Chairperson-IEEE SB MUJ)</p>
             </div>
             <div className={styles.contactCard}>
-              <h4 className={styles.contactName}>Kashish Kumar</h4>
+              <h4 className={styles.contactName}>
+                <svg className={styles.userIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Kashish Kumar
+              </h4>
               <p className={styles.contactPhone}>+91 98731 63828</p>
               <p className={styles.contactRole}>(Chairperson-IEEE WIE MUJ)</p>
             </div>
             <div className={styles.contactCard}>
-              <h4 className={styles.contactName}>Anshika Katare</h4>
+              <h4 className={styles.contactName}>
+                <svg className={styles.userIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Anshika Katare
+              </h4>
               <p className={styles.contactPhone}>+91 79825 53998</p>
               <p className={styles.contactRole}>(Chairperson-IEEE CIS MUJ)</p>
             </div>
@@ -132,7 +156,7 @@ export default function Footer() {
         {/* Right Section: Website Links */}
         <div className={styles.rightSection}>
           <div className={styles.linksContainer}>
-            <a href="https://ieee-cs-muj.github.io" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+            <a href="https://cs.ieeemuj.com" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
               <svg className={styles.globeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="2" y1="12" x2="22" y2="12" />
@@ -140,7 +164,7 @@ export default function Footer() {
               </svg>
               IEEE CS WEBSITE
             </a>
-            <a href="https://ieee-sb-muj.github.io" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+            <a href="https://ieeemuj.com/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
               <svg className={styles.globeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="2" y1="12" x2="22" y2="12" />
@@ -148,7 +172,7 @@ export default function Footer() {
               </svg>
               IEEE SB WEBSITE
             </a>
-            <a href="https://ieee-wie-muj.github.io" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+            <a href="https://wie.ieeemuj.com" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
               <svg className={styles.globeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="2" y1="12" x2="22" y2="12" />
