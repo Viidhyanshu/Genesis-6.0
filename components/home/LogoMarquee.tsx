@@ -8,16 +8,16 @@ const FONT: React.CSSProperties = {
 };
 
 const LOOP_ITEMS = [
-  { label: "Genesis", platform: "instagram", link: "https://www.instagram.com/genesis.muj/" },
+  { label: "Genesis", platform: "instagram", link: "https://www.instagram.com/genesismuj/" },
   { label: "Genesis", platform: "linkedin", link: "https://www.linkedin.com/company/genesis-muj/" },
-  { label: "IEEE CS", platform: "instagram", link: "https://www.instagram.com/ieeecsmuj/" },
-  { label: "IEEE CS", platform: "linkedin", link: "https://www.linkedin.com/company/ieeecsmuj/" },
-  { label: "IEEE SB", platform: "instagram", link: "https://www.instagram.com/ieeesbmuj/" },
+  { label: "IEEE CS", platform: "instagram", link: "https://www.instagram.com/ieee_csmuj/" },
+  { label: "IEEE CS", platform: "linkedin", link: "https://www.linkedin.com/company/ieee-cs-muj/" },
+  { label: "IEEE SB", platform: "instagram", link: "https://www.instagram.com/ieeemuj/" },
   { label: "IEEE SB", platform: "linkedin", link: "https://www.linkedin.com/company/ieeesbmuj/" },
   { label: "IEEE WIE", platform: "instagram", link: "https://www.instagram.com/ieeewiemuj/" },
-  { label: "IEEE WIE", platform: "linkedin", link: "https://www.linkedin.com/company/ieeewiemuj/" },
-  { label: "IEEE CIS", platform: "instagram", link: "https://www.instagram.com/ieeecismuj/" },
-  { label: "IEEE CIS", platform: "linkedin", link: "https://www.linkedin.com/company/ieeecismuj/" }
+  { label: "IEEE WIE", platform: "linkedin", link: "https://www.instagram.com/ieee.wiemuj/" },
+  { label: "IEEE CIS", platform: "instagram", link: "https://www.instagram.com/ieee.cismuj/" },
+  { label: "IEEE CIS", platform: "linkedin", link: "https://www.linkedin.com/company/ieee-cis-muj/" }
 ];
 
 const InstagramIcon = () => (
