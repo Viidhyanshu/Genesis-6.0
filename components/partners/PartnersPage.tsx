@@ -118,10 +118,61 @@ const PARTNERS_DATA: Partner[] = [
         <svg viewBox="0 0 100 50" className="w-full h-auto text-white">
           <path d="M50 5c-8 0-14 6-14 13s6 13 14 17c8 4 14 6 14 13s-6 13-14 13-14-6-14-13h4c0 6 4 10 10 10s10-4 10-10-4-10-10-14c-8-4-14-6-14-13s6-13 14-13 14 6 14 13h-4c0-6-4-10-10-10z" fill="white" />
         </svg>
-        <text className="text-white text-[10px] font-black tracking-[0.25em] uppercase text-center w-full" style={FONT}>SPICE</text>
+        <span className="text-white text-[10px] font-black tracking-[0.25em] uppercase text-center w-full" style={FONT}>SPICE</span>
       </div>
     ),
     website: "https://spice.in",
+  }
+];
+
+interface FeaturedPartner {
+  name: string;
+  category: string;
+  logo: React.ReactNode;
+  description: string;
+  website: string;
+}
+
+const FEATURED_PARTNERS: FeaturedPartner[] = [
+  {
+    name: "Book My Show",
+    category: "Title Sponsor",
+    logo: (
+      <svg viewBox="0 0 240 80" className="w-full max-w-[170px] sm:max-w-[210px] h-auto">
+        <defs>
+          <mask id="ticket-mask">
+            <rect x="0" y="0" width="38" height="52" fill="white" />
+            <circle cx="0" cy="26" r="4.5" fill="black" />
+            <circle cx="38" cy="26" r="4.5" fill="black" />
+          </mask>
+        </defs>
+        <text x="5" y="52" fill="white" fontSize="36" fontWeight="bold" fontFamily="sans-serif">book</text>
+        <g transform="translate(90, 10) rotate(-15)">
+          <rect x="0" y="0" width="38" height="52" rx="3" fill="white" mask="url(#ticket-mask)" />
+          <text x="19" y="33" fill="#0d1b35" fontSize="17" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">my</text>
+        </g>
+        <text x="142" y="52" fill="white" fontSize="36" fontWeight="bold" fontFamily="sans-serif">show</text>
+      </svg>
+    ),
+    description: "BookMyShow offers showtimes, movie tickets, reviews, trailers, concert tickets and events.",
+    website: "https://in.bookmyshow.com"
+  },
+  {
+    name: "VisionIAS",
+    category: "Ed-Tech Partner",
+    logo: (
+      <svg viewBox="0 0 240 80" className="w-full max-w-[170px] sm:max-w-[210px] h-auto">
+        <text x="10" y="45" fontFamily="sans-serif" fontWeight="900" fontSize="34" letterSpacing="0.5">
+          <tspan fill="#00629B">VISION</tspan>
+          <tspan fill="#E31E24">IAS</tspan>
+        </text>
+        <text x="10" y="65" fill="#94a3b8" fontFamily="sans-serif" fontWeight="700" fontSize="10" letterSpacing="3.5">
+          INSPIRING INNOVATION
+        </text>
+      </svg>
+    ),
+    description: "Vision IAS is India's premier Research and Training Institute for UPSC Civil Services Examination.",
+    website: "https://www.visionias.in"
   }
 ];
 
@@ -156,6 +207,50 @@ export default function PartnersPage() {
         <p className="text-lg md:text-xl text-blue-100/70 font-light max-w-2xl mx-auto leading-relaxed">
           We are proud to collaborate with visionary organizations that share our passion for innovation and technology. These esteemed partners play a crucial role in making Genesis 6.0 a success.
         </p>
+      </div>
+
+      {/* Featured Partners Section (Two Large Landscape Cards) */}
+      <div className="w-full max-w-6xl mx-auto flex flex-col gap-6 mb-8 mt-4">
+        {FEATURED_PARTNERS.map((partner, idx) => (
+          <div key={idx} className="relative group flex flex-col">
+            {/* Ambient colorful card-specific glow behind the glass card */}
+            <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-pink-500/10 via-purple-500/15 to-blue-500/15 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700 pointer-events-none -z-10" />
+            
+            <a
+              href={partner.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex flex-col md:flex-row items-center justify-between p-6 sm:p-8 rounded-2xl bg-white/[0.05] backdrop-blur-[32px] border border-white/[0.08] shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.22),_inset_0_-1px_1.5px_rgba(0,0,0,0.18),_0_12px_32px_rgba(0,0,0,0.25)] hover:border-white/20 hover:bg-white/[0.09] transition-all duration-500 hover:-translate-y-1 hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.38),_inset_0_-1px_1.5px_rgba(0,0,0,0.1),_0_24px_50px_rgba(30,144,255,0.22)] gap-8 text-left"
+            >
+              {/* Left Column: Logo */}
+              <div className="flex-shrink-0 w-full md:w-1/3 flex items-center justify-center md:justify-start">
+                {partner.logo}
+              </div>
+
+              {/* Right Column: Info & Arrow */}
+              <div className="flex-1 flex flex-row items-center justify-between gap-6 w-full">
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-2xl md:text-3xl font-black text-white" style={FONT}>
+                    {partner.name}
+                  </h3>
+                  <span className="text-[14px] md:text-[16px] font-bold text-blue-300">
+                    {partner.category}
+                  </span>
+                  <p className="text-xs md:text-sm text-blue-100/70 leading-relaxed font-sans font-medium">
+                    {partner.description}
+                  </p>
+                </div>
+
+                {/* Arrow */}
+                <div className="flex-shrink-0 text-blue-100 group-hover:text-white transition-colors duration-300">
+                  <svg className="w-6 h-6 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
 
       {/* Partner Grid */}
