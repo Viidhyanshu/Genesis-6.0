@@ -7,6 +7,7 @@ import "@fontsource/google-sans/500.css";
 import "@fontsource/google-sans/700.css";
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
+import LogoMarquee from "../components/home/LogoMarquee";
 import SmoothScrollProvider from "../components/providers/SmoothScrollProvider";
 
 const geistSans = Geist({
@@ -57,6 +58,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           {children}
+          <LogoMarquee />
           <Footer />
         </SmoothScrollProvider>
       </body>

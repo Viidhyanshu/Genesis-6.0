@@ -120,10 +120,7 @@ export default function Home() {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full flex flex-col items-center overflow-x-hidden"
-      style={{
-        background: "linear-gradient(135deg, #07162c 0%, #0e2954 35%, #1f5194 70%, #60a5fa 100%)",
-      }}
+      className="relative w-full flex flex-col items-center overflow-x-hidden bg-transparent"
     >
       {/* Hero Section with Mascot */}
       <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">

@@ -57,6 +57,8 @@ export default function Footer() {
         ))}
       </div>
       <div className={styles.content}>
+
+
         {/* Left Section: Logos */}
         <div className={styles.leftSection}>
           <div className={styles.logoContainer}>

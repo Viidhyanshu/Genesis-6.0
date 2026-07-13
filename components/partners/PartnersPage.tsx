@@ -6,6 +6,7 @@ const FONT: React.CSSProperties = {
   fontFamily: "var(--font-mirava-sans)",
 };
 
+
 interface Partner {
   name: string;
   logo: React.ReactNode;
@@ -180,14 +181,7 @@ export default function PartnersPage() {
   return (
     <main className="relative min-h-screen w-full px-6 py-32 md:px-12 flex flex-col items-center justify-start overflow-x-hidden font-sans text-white select-none">
       
-      {/* Background Gradient */}
-      <div
-        className="fixed inset-0 -z-50"
-        style={{
-          background:
-            "linear-gradient(135deg, rgb(7,22,44) 0%, rgb(14,41,84) 35%, rgb(31,81,148) 70%, rgb(96,165,250) 100%)",
-        }}
-      />
+
 
       {/* Decorative Glow Elements */}
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -282,6 +276,8 @@ export default function PartnersPage() {
           </div>
         ))}
       </div>
+
+
 
     </main>
   );

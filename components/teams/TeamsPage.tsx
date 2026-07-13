@@ -237,14 +237,7 @@ export default function TeamsPage() {
   return (
     <main className="relative min-h-screen overflow-hidden text-white pt-28 pb-24 px-4 md:px-8 lg:px-16">
 
-    {/* Background */}
-    <div
-        className="fixed inset-0 -z-50"
-        style={{
-            background:
-                "linear-gradient(135deg, rgb(7,22,44) 0%, rgb(14,41,84) 35%, rgb(31,81,148) 70%, rgb(96,165,250) 100%)",
-        }}
-    />
+
 
       {/* ── Hero Heading ─────────────────────────────────────────────────── */}
       <div className="text-center mb-14 max-w-4xl mx-auto">

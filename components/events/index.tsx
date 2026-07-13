@@ -75,10 +75,7 @@ const TICKETS_DATA: TicketData[] = [
 export default function Events() {
   return (
     <div
-      className="relative min-h-screen w-full flex flex-col items-center pt-36 md:pt-40 pb-24 font-sans text-white overflow-x-hidden"
-      style={{
-        background: "linear-gradient(135deg, #07162c 0%, #0e2954 35%, #1f5194 70%, #60a5fa 100%)",
-      }}
+      className="relative min-h-screen w-full flex flex-col items-center pt-36 md:pt-40 pb-24 font-sans text-white overflow-x-hidden bg-transparent"
     >
       {/* Decorative Blur Backgrounds */}
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
