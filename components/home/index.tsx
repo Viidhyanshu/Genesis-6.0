@@ -130,9 +130,9 @@ export default function Home() {
         {/* Background Giant Text */}
         <div 
           ref={bgTextRef}
-          className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0"
+          className="absolute inset-0 flex flex-col items-center justify-start pt-24 md:justify-center md:pt-0 select-none pointer-events-none z-0"
         >
-          <h1 className="text-[16vw] md:text-[19vw] font-black tracking-widest font-absans bg-gradient-to-b from-white/90 to-white/10 bg-clip-text text-transparent uppercase text-center leading-none">
+          <h1 className="text-[13vw] sm:text-[15vw] md:text-[19vw] font-black tracking-widest font-absans bg-gradient-to-b from-white/90 to-white/10 bg-clip-text text-transparent uppercase text-center leading-none">
             GENESIS 6.0
           </h1>
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
         {/* Center 3D Mascot Canvas Wrapper */}
         <div 
           ref={canvasParentRef}
-          className="w-full max-w-[800px] aspect-square flex items-center justify-center relative z-10"
+          className="w-[115vw] sm:w-full max-w-[500px] sm:max-w-[800px] aspect-square shrink-0 flex items-center justify-center relative z-10"
         >
           <MascotCanvas />
         </div>

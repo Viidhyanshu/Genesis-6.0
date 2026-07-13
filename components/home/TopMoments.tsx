@@ -144,6 +144,31 @@ export default function TopMoments() {
 
   return (
     <section ref={containerRef} className="moments-section w-full max-w-6xl mx-auto px-6 py-20 md:py-28 relative z-10 flex flex-col items-center">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] bg-blue-500/10 rounded-full blur-[100px] sm:blur-[160px] pointer-events-none -z-20" />
+
+      {/* Mobile Fairy Lights (Vertical hanging strings on the sides) */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none -z-10 md:hidden overflow-hidden">
+        {/* Left String */}
+        <div className="absolute left-[6%] sm:left-[12%] top-0 bottom-0 w-[1px] border-l border-dashed border-slate-600/50 flex flex-col justify-around py-16">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div key={`left-bulb-${i}`} className="relative w-0 h-0 flex items-center justify-center">
+              <div className="absolute w-4.5 h-4.5 bg-amber-400/25 rounded-full blur-[3.5px] animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
+              <div className="absolute w-1.5 h-1.5 bg-amber-100 rounded-full border border-amber-200/50" />
+            </div>
+          ))}
+        </div>
+        {/* Right String */}
+        <div className="absolute right-[6%] sm:right-[12%] top-0 bottom-0 w-[1px] border-l border-dashed border-slate-600/50 flex flex-col justify-around py-16">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div key={`right-bulb-${i}`} className="relative w-0 h-0 flex items-center justify-center">
+              <div className="absolute w-4.5 h-4.5 bg-amber-400/25 rounded-full blur-[3.5px] animate-pulse" style={{ animationDelay: `${i * 250}ms` }} />
+              <div className="absolute w-1.5 h-1.5 bg-amber-100 rounded-full border border-amber-200/50" />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Section Header */}
       <div className="text-center max-w-3xl mb-1 sm:mb-1">
         

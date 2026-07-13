@@ -23,7 +23,8 @@ export default function MascotCanvas() {
 
     // 2. Camera Setup
     const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
-    camera.position.set(0, 0.5, 7.5);
+    const initialZ = typeof window !== "undefined" && window.innerWidth < 640 ? 6.0 : 7.5;
+    camera.position.set(0, 0.5, initialZ);
 
     // 3. Renderer Setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -159,6 +160,14 @@ export default function MascotCanvas() {
       const w = container.clientWidth;
       const h = container.clientHeight || 500;
       camera.aspect = w / h;
+      
+      // Dynamically adjust camera Z position based on window width for responsiveness
+      if (window.innerWidth < 640) {
+        camera.position.z = 6.0;
+      } else {
+        camera.position.z = 7.5;
+      }
+      
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
     };
@@ -190,7 +199,7 @@ export default function MascotCanvas() {
   }, []);
 
   return (
-    <div className="relative w-full h-full min-h-[400px] md:min-h-[550px] lg:min-h-[650px] flex items-center justify-center select-none">
+    <div className="relative w-full h-full min-h-[350px] sm:min-h-[400px] md:min-h-[550px] lg:min-h-[650px] flex items-center justify-center select-none">
       {/* Three.js Canvas Container */}
       <div ref={containerRef} className="absolute inset-0 w-full h-full z-10" />
 
