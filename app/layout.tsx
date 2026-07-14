@@ -37,7 +37,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Genesis 6.0 | Premier Technical Symposium",
+  title: "Genesis 6.0",
   description: "Welcome to Genesis 6.0 - the flagship technical event. Compete in hackathons, join workshops, win exciting prizes, and connect with top tech minds.",
   keywords: ["Genesis 6.0", "IEEE", "technical symposium", "hackathon", "workshops", "coding contest", "engineering"],
   icons: {
