@@ -61,6 +61,12 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          crossOrigin="anonymous" 
+          referrerPolicy="no-referrer" 
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <SmoothScrollProvider>

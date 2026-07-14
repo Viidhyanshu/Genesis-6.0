@@ -143,9 +143,7 @@ export default function ContactPage() {
           {/* Card 1: By Train */}
           <div className="relative group p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl hover:-translate-y-2 hover:border-white/15 hover:bg-white/10 transition-all duration-500 flex flex-col justify-between" style={{ minHeight: "260px" }}>
             <div className="absolute -top-6 left-6 w-14 h-14 bg-gradient-to-tr from-amber-500 to-amber-300 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 border border-white/20">
-              <svg className="w-7 h-7 text-slate-950" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2c3.08 0 5.5 1.64 5.5 4v10.5c0 1.38-1.12 2.5-2.5 2.5H9c-1.38 0-2.5-1.12-2.5-2.5V6C6.5 3.64 8.92 2 12 2zm3.5 4h-7v4h7V6zm-7 8c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1zm5 0c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1zM9 16.5h6v1H9v-1z" />
-              </svg>
+              <i className="fa-solid fa-train-tram text-2xl text-slate-950"></i>
             </div>
             <div className="pt-6">
               <h3 className="text-xl font-bold font-mirava-sans text-white tracking-tight mb-3">
@@ -162,9 +160,7 @@ export default function ContactPage() {
           {/* Card 2: By Air */}
           <div className="relative group p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl hover:-translate-y-2 hover:border-white/15 hover:bg-white/10 transition-all duration-500 flex flex-col justify-between" style={{ minHeight: "260px" }}>
             <div className="absolute -top-6 left-6 w-14 h-14 bg-gradient-to-tr from-pink-500 to-rose-400 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 border border-white/20">
-              <svg className="w-7 h-7 text-slate-950" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5L21 16z" />
-              </svg>
+              <i className="fa-solid fa-plane-arrival text-2xl text-slate-950"></i>
             </div>
             <div className="pt-6">
               <h3 className="text-xl font-bold font-mirava-sans text-white tracking-tight mb-3">
@@ -181,9 +177,7 @@ export default function ContactPage() {
           {/* Card 3: By Bus */}
           <div className="relative group p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl hover:-translate-y-2 hover:border-white/15 hover:bg-white/10 transition-all duration-500 flex flex-col justify-between" style={{ minHeight: "260px" }}>
             <div className="absolute -top-6 left-6 w-14 h-14 bg-gradient-to-tr from-orange-600 to-orange-400 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 border border-white/20">
-              <svg className="w-7 h-7 text-slate-950" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 16c0 .55.45 1 1 1h1v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h1c.55 0 1-.45 1-1V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm4-6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm8 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-9 4h10v2H7v-2z" />
-              </svg>
+              <i className="fa-solid fa-bus text-2xl text-slate-950"></i>
             </div>
             <div className="pt-6">
               <h3 className="text-xl font-bold font-mirava-sans text-white tracking-tight mb-3">
