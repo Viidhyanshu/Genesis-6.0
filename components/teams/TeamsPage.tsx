@@ -122,13 +122,13 @@ function MemberCard({ member }: { member: TeamMember }) {
 
   return (
     <div
-      className="group flex flex-col items-center justify-between rounded-2xl p-5 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_50px_rgba(26,115,232,0.3)] border border-white/25 bg-gradient-to-b from-[#72b6e5]/30 to-[#5ea1d4]/30 backdrop-blur-lg"
+      className="group flex flex-col items-center justify-between rounded-2xl p-4 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_50px_rgba(26,115,232,0.3)] border border-white/25 bg-gradient-to-b from-[#72b6e5]/30 to-[#5ea1d4]/30 backdrop-blur-lg"
       style={{
         boxShadow: "inset 0 1px 1px rgba(255,255,255,0.4), 0 8px 32px 0 rgba(0, 0, 0, 0.15)",
       }}
     >
       {/* ── Photo area — padded, rounded container ── */}
-      <div className="relative w-full aspect-[4/5] flex-shrink-0 rounded-xl overflow-hidden bg-gradient-to-br from-[#539cd4] to-[#4083bb] border border-white/10 shadow-inner">
+      <div className="relative w-full aspect-square flex-shrink-0 rounded-xl overflow-hidden bg-gradient-to-br from-[#539cd4] to-[#4083bb] border border-white/10 shadow-inner">
         {member.photo ? (
           <Image
             src={member.photo}
@@ -150,7 +150,7 @@ function MemberCard({ member }: { member: TeamMember }) {
       </div>
 
       {/* ── Name + Role ── */}
-      <div className="w-full text-center mt-5 mb-4">
+      <div className="w-full text-center mt-4 mb-3">
         <h3
           className="text-white font-extrabold text-[16px] md:text-[18px] leading-snug drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)] tracking-wide"
           style={FONT}
@@ -166,23 +166,25 @@ function MemberCard({ member }: { member: TeamMember }) {
       </div>
 
       {/* ── LinkedIn Button — ALWAYS visible at the bottom ── */}
-      <div className="flex items-center justify-center mt-auto">
+      <div className="flex items-center justify-center mt-auto w-full">
         {member.linkedin ? (
           <a
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full border border-white/25 bg-white/20 backdrop-blur-sm text-white hover:text-white/80 hover:bg-white/30 hover:scale-110 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.05)]"
+            className="flex items-center justify-center gap-2 px-5 py-1.5 rounded-full border border-white/30 bg-white/20 backdrop-blur-sm text-white hover:text-white hover:bg-white/35 hover:scale-105 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-fit"
             aria-label={`${member.name} LinkedIn`}
           >
-            <LinkedInIcon className="w-[18px] h-[18px]" />
+            <LinkedInIcon className="w-[14px] h-[14px] text-white" />
+            <span className="text-[13px] font-bold text-white tracking-wide" style={FONT}>LinkedIn</span>
           </a>
         ) : (
           <span
-            className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-white/10 text-white/40 cursor-not-allowed"
+            className="flex items-center justify-center gap-2 px-5 py-1.5 rounded-full border border-white/20 bg-white/10 text-white/60 cursor-not-allowed w-fit"
             aria-label="LinkedIn (not linked)"
           >
-            <LinkedInIcon className="w-[18px] h-[18px]" />
+            <LinkedInIcon className="w-[14px] h-[14px] text-white/60" />
+            <span className="text-[13px] font-bold text-white/60 tracking-wide" style={FONT}>LinkedIn</span>
           </span>
         )}
       </div>
@@ -337,7 +339,7 @@ export default function TeamsPage() {
 </div>
 
               {/* Member Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 {team.members.map((member) => (
                   <MemberCard key={member.id} member={member} />
                 ))}
