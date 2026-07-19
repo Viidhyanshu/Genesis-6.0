@@ -2,8 +2,11 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
-import { teamsData, MemberType } from "./teamsData";
-import { LinkedInIcon, GitHubIcon, InstagramIcon, ChevronIcon, FilterIcon } from "./TeamIcons";
+import { MemberType, TeamMember } from "./teamsData";
+import { executiveData } from "./executiveData";
+import { coreData } from "./coreData";
+import { facultyData } from "./facultyData";
+import { LinkedInIcon, ChevronIcon, FilterIcon } from "./TeamIcons";
 
 // ─── Font helper ──────────────────────────────────────────────────────────────
 const FONT: React.CSSProperties = {
@@ -109,7 +112,7 @@ function SlidingPillToggle({
 // Layout: large photo fills the top 3/4 of the card, name + role appear small
 // below. LinkedIn / GitHub icon buttons always visible at the very bottom.
 
-function MemberCard({ member }: { member: (typeof teamsData)[0]["members"][0] }) {
+function MemberCard({ member }: { member: TeamMember }) {
   const initials = member.name
     .split(" ")
     .map((n) => n[0])
@@ -119,13 +122,13 @@ function MemberCard({ member }: { member: (typeof teamsData)[0]["members"][0] })
 
   return (
     <div
-      className="group flex flex-col items-center justify-between rounded-[28px] p-5 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_50px_rgba(26,115,232,0.3)] border border-white/25 bg-gradient-to-b from-[#72b6e5]/50 to-[#5ea1d4]/50 backdrop-blur-lg"
+      className="group flex flex-col items-center justify-between rounded-2xl p-5 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_50px_rgba(26,115,232,0.3)] border border-white/25 bg-gradient-to-b from-[#72b6e5]/30 to-[#5ea1d4]/30 backdrop-blur-lg"
       style={{
         boxShadow: "inset 0 1px 1px rgba(255,255,255,0.4), 0 8px 32px 0 rgba(0, 0, 0, 0.15)",
       }}
     >
       {/* ── Photo area — padded, rounded container ── */}
-      <div className="relative w-full aspect-[4/5] flex-shrink-0 rounded-[20px] overflow-hidden bg-gradient-to-br from-[#539cd4] to-[#4083bb] border border-white/10 shadow-inner">
+      <div className="relative w-full aspect-[4/5] flex-shrink-0 rounded-xl overflow-hidden bg-gradient-to-br from-[#539cd4] to-[#4083bb] border border-white/10 shadow-inner">
         {member.photo ? (
           <Image
             src={member.photo}
@@ -162,56 +165,24 @@ function MemberCard({ member }: { member: (typeof teamsData)[0]["members"][0] })
         </p>
       </div>
 
-      {/* ── Social buttons pill — ALWAYS visible at the bottom ── */}
-      <div className="flex items-center justify-center gap-5 px-5 py-2 rounded-full border border-white/25 bg-white/20 backdrop-blur-sm w-fit mt-auto transition-colors duration-300 hover:bg-white/30 shadow-[0_2px_10px_rgba(0,0,0,0.05)]">
-        {/* Instagram */}
-        {member.instagram !== undefined && member.instagram ? (
-          <a
-            href={member.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-white/80 transition-all duration-200 hover:scale-110"
-            aria-label={`${member.name} Instagram`}
-          >
-            <InstagramIcon className="w-[18px] h-[18px]" />
-          </a>
-        ) : (
-          <span className="text-white/40 cursor-not-allowed" aria-label="Instagram (not linked)">
-            <InstagramIcon className="w-[18px] h-[18px]" />
-          </span>
-        )}
-
-        {/* LinkedIn */}
+      {/* ── LinkedIn Button — ALWAYS visible at the bottom ── */}
+      <div className="flex items-center justify-center mt-auto">
         {member.linkedin ? (
           <a
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-white/80 transition-all duration-200 hover:scale-110"
+            className="flex items-center justify-center w-10 h-10 rounded-full border border-white/25 bg-white/20 backdrop-blur-sm text-white hover:text-white/80 hover:bg-white/30 hover:scale-110 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.05)]"
             aria-label={`${member.name} LinkedIn`}
           >
             <LinkedInIcon className="w-[18px] h-[18px]" />
           </a>
         ) : (
-          <span className="text-white/40 cursor-not-allowed" aria-label="LinkedIn (not linked)">
-            <LinkedInIcon className="w-[18px] h-[18px]" />
-          </span>
-        )}
-
-        {/* GitHub */}
-        {member.github ? (
-          <a
-            href={member.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-white/80 transition-all duration-200 hover:scale-110"
-            aria-label={`${member.name} GitHub`}
+          <span
+            className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-white/10 text-white/40 cursor-not-allowed"
+            aria-label="LinkedIn (not linked)"
           >
-            <GitHubIcon className="w-[18px] h-[18px]" />
-          </a>
-        ) : (
-          <span className="text-white/40 cursor-not-allowed" aria-label="GitHub (not linked)">
-            <GitHubIcon className="w-[18px] h-[18px]" />
+            <LinkedInIcon className="w-[18px] h-[18px]" />
           </span>
         )}
       </div>
@@ -228,17 +199,17 @@ export default function TeamsPage() {
   const [filtersOpen, setFiltersOpen] = useState<boolean>(false);
 
   const filteredTeams = useMemo(() => {
-    const teamFiltered =
-      activeTeamFilter === "all"
-        ? teamsData
-        : teamsData.filter((t) => t.id === activeTeamFilter);
+    let baseDataset = coreData;
+    if (activeMemberType === "executive") {
+      baseDataset = executiveData;
+    } else if (activeMemberType === "faculty") {
+      baseDataset = facultyData;
+    }
 
-    return teamFiltered
-      .map((team) => ({
-        ...team,
-        members: team.members.filter((m) => m.type === activeMemberType),
-      }))
-      .filter((team) => team.members.length > 0);
+    if (activeTeamFilter === "all") {
+      return baseDataset;
+    }
+    return baseDataset.filter((t) => t.id === activeTeamFilter);
   }, [activeTeamFilter, activeMemberType]);
 
   return (
